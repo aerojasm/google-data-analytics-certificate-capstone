@@ -134,6 +134,10 @@ Annual members, on the other hand, seem to have a strong preference for classic 
 
 Finally, some differences can be found on the rides starting stations. The map below shows that casual customers tend to start their rides closer to the coastal area, which could be considered more attractive for tourism. As for the annual members, their starting stations are more diversified around the city.
 
+<p align="center">
+  <img src="Plots/Plot_Map.png">
+</p>
+
 # Conclusion
 
 The present case study had the objective to analyze the Cyclistic's historical trip data and identify the potential differences between the annual members and casual customers. There are two main conclusions that can be obtained for each profile:
