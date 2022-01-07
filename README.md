@@ -55,7 +55,9 @@ Then, it is necessary to load each data set per month with the `read_csv` functi
 #### Checking of Missing Values
 After the creation of this single data frame (called `all_trips`), it is recommended to check for missing values in order to verify if any further analysis is possible.
 
-<img align="center" src="Plots/Plot0_Missings.png">
+<p align="center">
+  <img src="Plots/Plot0.png">
+</p>
 
 The results show that the columns with missing values are the ones related to the correspondent stations. However, as it was mentioned earlier, it is not possible to verify the existence of a potential bias.
 Nevertheless, the main analysis is based on the other columns with no missing values, which implies that the final conclusions and recommendations of this case study will not be biased.
@@ -92,17 +94,43 @@ In fact, the next couple of visualizations support this last argument. **Plot 1*
   <img src="Plots/Plot1.png">
 </p>
 
+
+<p align="center">
+  <img src="Plots/Plot2.png">
+</p>
+
 Even more, despite the fluctuations of the number of rides that could happen due to seasonality, the evidence shows that annual members could have a more specific purpose for their rides. This argument can be inferred from the fact that their average ride length in minutes is almost uniform throughout the year (View **Plot 3**).
 
 However, the same indicator has very different values for the casual customers, which also implies that the purpose of their rides can vary a lot (work, tourism or pleasure).
+
+
+<p align="center">
+  <img src="Plots/Plot3.png">
+</p>
 
 A different perspective of these results can be obtained if the analysis is based on the days of the week. **Plot 4** shows that the members are more likely to take a ride during weekdays, which does not happen during the weekends.
 
 Moreover, for the members the average ride duration is constant throughout the week, with a very slight increase on Saturday and Sunday (View **Plot 5**). This could mean that they take these rides mainly to commute to their workplaces (or educational centers), but also that even this group is likely to take a ride just for leisure (given the fact that they do not have to pay extra for these situations). On the contrary, the numbers of casual customers are much larger during the weekends, which implies a predominance of bike rides for tourism or leisure.
 
+<p align="center">
+  <img src="Plots/Plot4.png">
+</p>
+
+<p align="center">
+  <img src="Plots/Plot5.png">
+</p>
+
 There are also clear differences on the type of bike each customer tends to choose. For example, **Plot 6** shows that casual customers do not seem to have a preference over classic or electric bikes. However, the rides on electric bikes do last longer (View **Plot 7**). This could happen because the e-bikes use always-on pedal-assist technology, so casual customers could take advantage of this feature since they seem to be more likely to take a ride for tourism or leisure. 
 
 Annual members, on the other hand, seem to have a strong preference for classic bikes (almost 50% more rides than on electric bikes). Nevertheless, the rides average duration is almost the same for both rideable types, which again could be a strong indicator that members are more focus on commuting to their workplaces than on tourism rides.
+
+<p align="center">
+  <img src="Plots/Plot6.png">
+</p>
+
+<p align="center">
+  <img src="Plots/Plot7.png">
+</p>
 
 Finally, some differences can be found on the rides starting stations. The map below shows that casual customers tend to start their rides closer to the coastal area, which could be considered more attractive for tourism. As for the annual members, their starting stations are more diversified around the city.
 
