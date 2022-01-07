@@ -55,6 +55,8 @@ Then, it is necessary to load each data set per month with the `read_csv` functi
 #### Checking of Missing Values
 After the creation of this single data frame (called `all_trips`), it is recommended to check for missing values in order to verify if any further analysis is possible.
 
+<img src="Plots/Plot0_Missings.png" height=500>
+
 The results show that the columns with missing values are the ones related to the correspondent stations. However, as it was mentioned earlier, it is not possible to verify the existence of a potential bias.
 Nevertheless, the main analysis is based on the other columns with no missing values, which implies that the final conclusions and recommendations of this case study will not be biased.
 
@@ -85,6 +87,8 @@ The first results of the comparison between both types of customers show that th
 This difference amounts to 20 minutes approximately, which could be an initial indicator that the purpose of the rides are also different.
 
 In fact, the next couple of visualizations support this last argument. **Plot 1** shows that the number of rides by annual members were almost uniform since April 2021. The upwards trend between December 2020 and March 2021 could have happened because of the colder weather conditions and the health restrictions during the pandemic. On the other hand, **Plot 2** shows a very clear peak of the number of rides by casual members between the months with the highest temperatures in a year, while it is not the case during months like September, October or November.
+
+<img src="Plots/Plot1.png">
 
 Even more, despite the fluctuations of the number of rides that could happen due to seasonality, the evidence shows that annual members could have a more specific purpose for their rides. This argument can be inferred from the fact that their average ride length in minutes is almost uniform throughout the year (View **Plot 3**).
 
