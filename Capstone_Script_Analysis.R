@@ -24,9 +24,6 @@ cyclistic_palette = c(
 # *****************************************************************************
 # PART 2: DESCRIPTIVE ANALYSIS     --------------------------------------------
 # *****************************************************************************
-#This section will try to answer different questions as a basis for the main analysis
-#The plots included in the next section will only serve as a guidance
-#The final output of this case study will have attached a report in Tableau
 
 summary(all_trips_v3$minutes_ride_length)
 
@@ -78,92 +75,99 @@ output4 <- all_trips_v3 %>%
 # *****************************************************************************
 # PART 3: VISUALIZATION            --------------------------------------------
 # *****************************************************************************
+# Each plot is exported manually
 
 #3.1 Number of rides by date
 output1 %>%
   ggplot(aes(x = date, y = number_of_rides, color = member_casual)) +
   geom_line() +
   labs(
-    title = "Total Rides by Date",
+    title = "Plot 1: Total Rides by Date",
     color = "Customer Type",
     x = NULL,
     y = "Number of Rides") +
   theme(
     legend.position = 'bottom',
-    panel.background = element_rect(fill = "white")) +
+    legend.title = element_text(size=9),
+    legend.text = element_text(size=8),
+    panel.background = element_rect(fill = "white"),
+    plot.title = element_text(size=12, hjust = 0.5, face = "bold")) +
   scale_color_manual(values = cyclistic_palette) +
   scale_y_continuous(labels = scales::comma)
-ggsave("Plot1.png")
 
-#3.2 Number of weekly rides by customer type
-output2 %>%
-  ggplot(aes(x=weekday, y=number_of_rides, fill=member_casual)) +
-  geom_col(position = "dodge") +
-  labs(
-    title = "Total Rides per Weekday",
-    fill = "Customer Type",
-    x = NULL,
-    y = "Number of Rides") +
-  theme(
-    legend.position = 'bottom',
-    panel.background = element_rect(fill = "white")) +
-  scale_fill_manual(values = cyclistic_palette) +
-  scale_y_continuous(labels = scales::comma)
-ggsave("Plot2.png")
-
-
-#3.3 Average duration of weekly rides by customer type
-output2 %>%
-  ggplot(aes(x=weekday, y=average_duration, fill=member_casual)) +
-  geom_col(position = "dodge") +
-  labs(
-    title = "Average Ride Duration per Weekday",
-    fill = "Customer Type",
-    x = NULL,
-    y = "Average Duration (minutes)") +
-  theme(
-    legend.position = 'bottom',
-    panel.background = element_rect(fill = "white")) +
-  scale_fill_manual(values = cyclistic_palette) +
-  scale_y_continuous(labels = scales::comma)
-ggsave("Plot3.png")
-
-
-#3.4 Number of monthly rides by customer type
+#3.2 Number of rides by month
 output3 %>%
   ggplot(aes(x=month_of_ride, y=number_of_rides, fill=member_casual)) +
   geom_col() +
   facet_wrap(~member_casual) +
   labs(
-    title = "Total Rides per Month",
+    title = "Plot 2: Total Rides per Month",
     fill = "Customer Type",
     x = NULL,
     y = "Number of Rides") +
   theme(
     legend.position = 'bottom',
-    panel.background = element_rect(fill = "white")) +
+    legend.title = element_text(size=9),
+    legend.text = element_text(size=8),
+    panel.background = element_rect(fill = "white"),
+    plot.title = element_text(size=12, hjust = 0.5, face = "bold")) +
   scale_fill_manual(values = cyclistic_palette) +
   scale_y_continuous(labels = scales::comma)
-ggsave("Plot4.png")
 
-
-#3.5 Average duration of monthly rides by customer type
+#3.3 Average ride duration per month
 output3 %>%
   ggplot(aes(x=month_of_ride, y=average_duration, fill = member_casual)) +
   geom_col() +
   facet_wrap(~member_casual) +
   labs(
-    title = "Average Ride Duration per Month",
+    title = "Plot 3: Average Ride Duration per Month",
     fill = "Customer Type",
     x = NULL,
     y = "Average Duration (minutes)") +
   theme(
     legend.position = 'bottom',
-    panel.background = element_rect(fill = "white")) +
+    legend.title = element_text(size=9),
+    legend.text = element_text(size=8),
+    panel.background = element_rect(fill = "white"),
+    plot.title = element_text(size=12, hjust = 0.5, face = "bold")) +
   scale_fill_manual(values = cyclistic_palette) +
   scale_y_continuous(labels = scales::comma)
-ggsave("Plot5.png")
 
+#3.4 Number of rides by weekday
+output2 %>%
+  ggplot(aes(x=weekday, y=number_of_rides, fill=member_casual)) +
+  geom_col(position = "dodge") +
+  labs(
+    title = "Plot 4: Total Rides per Weekday",
+    fill = "Customer Type",
+    x = NULL,
+    y = "Number of Rides") +
+  theme(
+    legend.position = 'bottom',
+    legend.title = element_text(size=9),
+    legend.text = element_text(size=8),
+    panel.background = element_rect(fill = "white"),
+    plot.title = element_text(size=12, hjust = 0.5, face = "bold")) +
+  scale_fill_manual(values = cyclistic_palette) +
+  scale_y_continuous(labels = scales::comma)
+
+#3.5 Average ride duration by weekday
+output2 %>%
+  ggplot(aes(x=weekday, y=average_duration, fill=member_casual)) +
+  geom_col(position = "dodge") +
+  labs(
+    title = "Plot 5: Average Ride Duration per Weekday",
+    fill = "Customer Type",
+    x = NULL,
+    y = "Average Duration (minutes)") +
+  theme(
+    legend.position = 'bottom',
+    legend.title = element_text(size=9),
+    legend.text = element_text(size=8),
+    panel.background = element_rect(fill = "white"),
+    plot.title = element_text(size=12, hjust = 0.5, face = "bold")) +
+  scale_fill_manual(values = cyclistic_palette) +
+  scale_y_continuous(labels = scales::comma)
 
 #3.6 Number of rides by rideable type
 output4 %>%
@@ -171,38 +175,39 @@ output4 %>%
   geom_col() +
   facet_wrap(~member_casual) +
   labs(
-    title = "Total Rides by Rideable Type",
+    title = "Plot 6: Total Rides by Rideable Type",
     fill = "Rideable Type",
     x = NULL,
     y = "Number of Rides") +
   theme(
     legend.position = 'bottom',
-    panel.background = element_rect(fill = "white")) +
+    legend.title = element_text(size=9),
+    legend.text = element_text(size=8),
+    panel.background = element_rect(fill = "white"),
+    plot.title = element_text(size=12, hjust = 0.5, face = "bold")) +
   scale_fill_manual(values = cyclistic_palette) +
   scale_y_continuous(labels = scales::comma)
-ggsave("Plot6.png")
-  
 
-#3.7 Average duration of rides by rideable type
+#3.7 Average ride duration by rideable type
 output4 %>%
   ggplot(aes(x=rideable_type_2, y=average_duration, fill = member_casual)) +
   geom_col() +
   facet_wrap(~member_casual) +
   labs(
-    title = "Average Ride Duration per Rideable Type",
+    title = "Plot 7: Average Ride Duration by Rideable Type",
     fill = "Rideable Type",
     x = NULL,
     y = "Average Duration (minutes)") +
   theme(
     legend.position = 'bottom',
-    panel.background = element_rect(fill = "white")) +
+    legend.title = element_text(size=9),
+    legend.text = element_text(size=8),
+    panel.background = element_rect(fill = "white"),
+    plot.title = element_text(size=12, hjust = 0.5, face = "bold")) +
   scale_fill_manual(values = cyclistic_palette) +
   scale_y_continuous(labels = scales::comma)
-ggsave("Plot7.png")
-
 
 #3.8 Start Station Mapping
-
 pal <- colorFactor(
   palette = c('#d97b08', '#226996'),
   levels = c('member', 'casual')
@@ -222,4 +227,5 @@ station_mapping <- leaflet(start_station_info) %>%
     labels = c('member', 'casual'),
     title = 'Customer type')
 
-mapshot(station_mapping, url = '2021_Nov_Cyclistic_Station_Map.html')
+mapshot(station_mapping, 
+        url = '2021_Nov_Cyclistic_Station_Map.html')

@@ -79,9 +79,11 @@ missing_val %>%     #Plots missing values for each column name
     y = "Column Names") +
   theme(
     legend.position = 'bottom',
-    panel.background = element_rect(fill = "white")) +
+    legend.title = element_text(size=9),
+    legend.text = element_text(size=8),
+    panel.background = element_rect(fill = "white"),
+    plot.title = element_text(size=12, hjust = 0.5, face = "bold")) +
   scale_x_continuous(labels = scales::comma)
-ggsave("Plot0_Missings.png")
 
 #3.4 Creation of variables
 #a. Date variables
