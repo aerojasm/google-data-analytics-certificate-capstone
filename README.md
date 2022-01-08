@@ -52,6 +52,10 @@ The fist step is to load the libraries used in the cleaning process. In this cas
 
 Then, it is necessary to load each data set per month with the `read_csv` function, which will create 12 different data frames in the environment. However, to perform further transformations, it is important to merge all of these into a single large data frame, in order to avoid repeating the same process for each month.
 
+<p align="center">
+  <img src="Plots/Output_Dirty_Rides.png">
+</p>
+
 #### Checking of Missing Values
 After the creation of this single data frame (called `all_trips`), it is recommended to check for missing values in order to verify if any further analysis is possible.
 
@@ -84,6 +88,14 @@ Finally, there are two separate data frames that are obtained after this cleanin
 1. `start_station_info`: summarizes the top 200 start stations, based on the total number of rides (either by casual customers or members)
 2. `all_trips_v3`: Cyclistic's cleaned trip data
 
+<p align="center">
+  <img src="Plots/Output_Maps.png">
+</p>
+
+<p align="center">
+  <img src="Plots/Output_Cleaned_Rides.png">
+</p>
+
 # Data Analysis
 The first results of the comparison between both types of customers show that the annual members have a lower average ride length than casual customers. 
 This difference amounts to 20 minutes approximately, which could be an initial indicator that the purpose of the rides are also different.
@@ -93,7 +105,6 @@ In fact, the next couple of visualizations support this last argument. **Plot 1*
 <p align="center">
   <img src="Plots/Plot1.png">
 </p>
-
 
 <p align="center">
   <img src="Plots/Plot2.png">
