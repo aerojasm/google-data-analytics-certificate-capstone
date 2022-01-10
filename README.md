@@ -63,11 +63,7 @@ After the creation of this single data frame (called `all_trips`), it is recomme
   <img src="Plots/Plot0.png">
 </p>
 
-The results show that the columns with missing values are the ones related to the correspondent stations. However, as it was mentioned earlier, it is not possible to verify the existence of a potential bias.
-Nevertheless, the main analysis is based on the other columns with no missing values, which implies that the final conclusions and recommendations of this case study will not be biased.
-
-The results show that the columns with missing values are the ones related to the correspondent stations. However, as it was mentioned earlier, it is not possible to verify the existence of a potential bias.
-Nevertheless, the main analysis is based on the other columns with no missing values, which implies that the final conclusions and recommendations of this case study will not be biased.
+The results show that the columns with missing values are the ones related to the correspondent stations. However, as it was mentioned earlier, it is not possible to verify the existence of a potential bias. Nevertheless, the main analysis is based on the other columns with no missing values, which implies that the final conclusions and recommendations of this case study will not be biased.
 
 #### Creation of Variables
 The next steps include the creation of new columns necessary for this analysis. The main variable created is `minutes_ride_length`, which represents the difference in minutes between the time of start and end of each ride. The other additions are date variables such as *month*, *year* and *day of the week*.
