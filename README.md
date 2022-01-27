@@ -45,7 +45,7 @@ The only clear limitation of this dataset is that about 20% of the observations 
 
 # Data Processing
 
-For this case study, the processing stage is performed in RStudio, which seems to be a proper tool to handle the large files included in the dataset. However, it is important to notice that the same process could be done with other tools like BigQuery (using SQL) or in other statistical packages like Stata.
+For this case study, the processing stage is performed in RStudio, which seems to be a proper tool to handle the large files included in the dataset. However, it is important to notice that the same process could be done with other tools like BigQuery (using SQL) or in other statistical packages like Stata. (The script for this case study can be found on the GitHub repository.)
 
 #### Data Collection and Merging
 The fist step is to load the libraries used in the cleaning process. In this case, the ones that are used are **tidyverse, lubridate, dplyr and ggplot2**.
