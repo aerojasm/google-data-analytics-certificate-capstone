@@ -62,7 +62,7 @@ unique(all_trips$rideable_type)
 unique(all_trips$member_casual)
 unique(all_trips$start_station_name)    #To drop later: DIVVY CASSETTE REPAIR MOBILE STATION
 
-#3.3 Check for missing values (CREDITS TO GINSAPUTRA -> INSERT LINK)
+#3.3 Check for missing values
 missing_val <- all_trips %>%
   sapply(function(x) sum(is.na(x))) %>%
   as.data.frame() %>%
